@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSCB20: Introduction To Databases and Web Applications</title>
+	<!-- included favicon to display utsc logo on tab -->
+	<link rel="shortcut icon" type = "_image_/ico" href="{{ url_for('static', filename='photos/favicon.ico') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='header_footer.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='coursework.css') }}">
+</head>
+<body>
+	
+	<!-- header section -->
+
+	<div class = "header">
+		
+		<!-- These are the menus that will always appear at the top when scrolling -->
+
+		<ul align = "center">
+			<li><a href = "{{ url_for('index') }}"> <b>Home</b> </a></li>
+			<li><a href = "{{ url_for('lecture') }}"> <b>Lectures</b></a> </li>
+			<li><a href = "{{ url_for('coursework') }}"> <b>Course Work</b></a>
+			<ul>
+
+				<!-- created submenus under course work to make it more organized
+				-->
+				<li><a href = "{{ url_for('coursework', _anchor='assignment') }}">Assignments</a></li>
+				<li><a href ="{{ url_for('coursework', _anchor='labs') }}">Labs</a></li>
+				<li><a href ="{{ url_for('coursework', _anchor='tests') }}">Tests</a></li>
+				<li><a href ="{{ url_for('coursework', _anchor='quizzes') }}">Quizzes</a></li>
+			</ul>
+		</li>
+
+			<li><a href = 'https://piazza.com/' target="_blank"><b>Class Discussion</b> </a></li>
+			<li><a href = 'https://markus.utsc.utoronto.ca/cscb20w19/?locale=en' target="_blank"><b>Markus</b> </a></li>
+			<li><a href = "{{ url_for('courseteam') }}"> <b>Course Team </b></a></li>
+			<li><a href = "{{ url_for('calendar') }}"> <b> Calendar </b></a></li>
+			<li><a href = "{{ url_for('resources') }}"> <b> Resources </b></a></li>
+			<li><a href = "{{ url_for('news') }}"> <b> News </b></a></li>
+			<li><a href = "/logout"> <b> Logout </b></a></li>
+		</ul>
+	</div>
+
+
+
+	<!-- main section -->
+
+	<div class = "main">
+	<section id = 'assignment'>
+		<h2> Assignments </h2>
+		<br>
+		<!-- '&ensp' is used to create two spaces for new sentences -->
+		<p> Here is the overview of the assignment topics, weights, and due dates.&ensp; There are a total of 3 assignments that are worth 22%. &ensp; All assignments <b>must</b> be submitted on markus.</p>
+		<!-- creating a table without using the table tag. Only use of div elements -->
+		<div class = "schedule">
+		<!-- refers to table rows -->
+		<div class = "row">
+			<!-- refers to table columns -->
+			<div class = "column">
+				<b><u> Assignment </u></b>
+			</div>
+			<div class = "column">
+				<b><u> Topic</u></b> 
+			</div>
+			<div class = "column">
+				<b><u> Weight </u></b>
+			</div>
+			<div class = "column" >
+				<b><u> Due Date</u></b>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank"> Assignment1 </a>
+			</div>
+			<div class = "column">
+				Relational Algebra, SQL 
+			</div>
+			<div class = "column">
+				5% 
+			</div>
+			<div class = "column" >
+				February 3rd @11:59pm
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank"> Assignment2 </a>
+			</div>
+			<div class = "column">
+				HTML, CSS 
+			</div>
+			<div class = "column">
+				7% 
+			</div>
+			<div class = "column" >
+				March 13th @11:59pm
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank"> Assignment3 </a>
+			</div>
+			<div class = "column">
+				Web Application and Database 
+			</div>
+			<div class = "column">
+				10% 
+			</div>
+			<div class = "column" >
+				April 5th @11:59pm
+			</div>
+		</div>
+	</div>
+
+	</section>
+
+	<section id = "labs">
+		<h2> Labs </h2>
+		<br>
+		<!-- '&ensp' is used to create two spaces to start new sentences -->
+		<p> Here are the labs and solutions.&ensp; Students must attend tutorials where these lab handouts will be discussed further. &ensp; Tutorials are mandatory, so all students <b>must</b> sign up on acorn.
+		<!-- creating a table without using the table tag. Only use of div elements -->
+		<div class = "schedule">
+		<!-- refers to table rows -->
+		<div class = "row">
+			<!-- refers to table columns -->
+			<div class = "column">
+				<b><u> Week </u></b>
+			</div>
+			<div class = "column">
+				<b><u> Lab</u></b> 
+			</div>
+			<div class = "column">
+				<b><u> Solutions </u></b>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "column">
+				2
+			</div>
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank">Week 2 handout</a>
+			</div>
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank">Week 2 solutions</a>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "column">
+				3
+			</div>
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank">Week 3 handout </a>
+			</div>
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank">Week 3 solutions </a>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "column">
+				4
+			</div>
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank">Week 4 handout </a>
+			</div>
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank">Week 4 solutions </a>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "column">
+				5
+			</div>
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank">Week 5 handout </a>
+			</div>
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank">Week 5 solutions </a>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "column">
+				6
+			</div>
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank">Week 6 handout </a>
+			</div>
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank">Week 6 solutions </a>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "column">
+				7
+			</div>
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank">Week 7 handout </a>
+			</div>
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank">Week 7 solutions </a>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "column">
+				8
+			</div>
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank">Week 8 handout </a>
+			</div>
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank">Week 8 solutions </a>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "column">
+				9
+			</div>
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank">Week 9 handout </a>
+			</div>
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank">Week 9 solutions </a>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "column">
+				10
+			</div>
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank">Week 10 handout </a>
+			</div>
+			<div class = "column">
+				<a href = "{{ url_for('static', filename='materials/dummypdffile.pdf') }}" target="_blank">Week 10 solutions </a>
+			</div>
+		</div>
+	</div>
+	</section>
+
+	<section id = 'tests'>
+		<h2> Tests </h2>
+		<br>
+		<!-- '&ensp' is used to create two spaces to start new sentences -->
+		<p> There will be one midterm for the course.&ensp; This test is worth 20% of total mark, it includes eveything from first week to week prior of exam.&ensp;  Schedule is posted below.</p>
+		<!-- creating a table without using the table tag. Only use of div elements -->
+		<div class = "schedule">
+			<!-- refers to table rows -->
+		<div class = "row">
+			<!-- refers to  table columns -->
+			<div class = "column">
+				<b><u> Date </u></b>
+			</div>
+			<div class = "column">
+				<b><u> Room #</u></b> 
+			</div>
+			<div class = "column">
+				<b><u> Last Name</u></b>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "column">
+				February 11th @9:00am
+			</div>
+			<div class = "column">
+				HL 001
+			</div>
+			<div class = "column">
+				A-Z
+			</div>
+		</div>
+	</div>
+	</section>
+
+	<section id = 'quizzes'>
+		<h2> Quizzes </h2>
+		<br>
+		<!-- '&ensp' is used to create two spaces to start new sentences -->
+		<p> Here is the schedule for the quizzes.&ensp; There are a total of 4 quizzes, that are each worth 2%.</p>
+		<!-- creating a table without using the table tag. Only use of div elements -->
+		<div class = "schedule">
+			<!-- refers to table rows -->
+		<div class = "row">
+			<!-- refers to table columns -->
+			<div class = "column">
+				<b><u> Quiz </u></b>
+			</div>
+			<div class = "column">
+				<b><u> Weight</u></b> 
+			</div>
+			<div class = "column">
+				<b><u> Due Date</u></b>
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "column">
+				Quiz1
+			</div>
+			<div class = "column">
+				2%
+			</div>
+			<div class = "column">
+				January 25th @11:59pm
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "column">
+				Quiz2
+			</div>
+			<div class = "column">
+				2%
+			</div>
+			<div class = "column">
+				February 8th @11:59pm
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "column">
+				Quiz3
+			</div>
+			<div class = "column">
+				2%
+			</div>
+			<div class = "column">
+				March 15th @11:59pm
+			</div>
+		</div>
+		<div class = "row">
+			<div class = "column">
+				Quiz4
+			</div>
+			<div class = "column">
+				2%
+			</div>
+			<div class = "column">
+				March 29th @11:59pm
+			</div>
+		</div>
+	</div>
+	</section>
+
+</div>
+	
+	<!-- footer section -->
+
+	<footer>
+		<a href = 'http://web.cs.toronto.edu/people/faculty.htm' target = "_blank"> UofT Faculty of Computer Science</a>
+		<br>
+		Site Designed by Ilyas Duale & Shamsun Nila
+	</footer>
+
+</body>
+</html>

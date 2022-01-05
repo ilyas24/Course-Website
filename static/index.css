@@ -1,0 +1,45 @@
+body{
+	background-color: oldlace;
+	font-size: 16px;
+	margin: 0px;
+}
+
+/* for all h1 texts, make format look better */
+h1{
+	padding-bottom: 70px;
+}
+
+img{
+	border: solid 10px black;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.main{
+	margin: 40px 100px 30px;
+	overflow: auto;
+	padding-bottom: 10px;
+	padding-top: 100px;
+}
+
+/* only applies to sections in main */
+.main section{
+	border: 2px solid black;
+	font-size: 20px;
+	padding: 20px;
+}
+
+.title{
+	margin: 100px 100px 50px;
+	font-size: 20px;
+	color: maroon;
+	text-decoration: underline;
+
+}
+
+/* readablity for mobile use */
+@media(min-width:500px){
+*{
+}
+}

@@ -1,0 +1,13 @@
+body{
+	text-align: center;
+}
+
+.title{
+	padding-top: 100px;
+	padding-bottom: 30px;
+	font-size: 20px;
+}
+
+.calendar{
+	padding-bottom: 30px;
+}

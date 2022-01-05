@@ -1,0 +1,54 @@
+/* Applies to table, since no table tag is used */
+.schedule{
+	display:table;     
+  	background-color: white;         
+  	border: 2px solid black;         
+  	border-spacing: 12px;
+  	text-align: center;
+  	font-size: 20px;
+  	margin-bottom: 100px;
+}
+
+.row{
+	display: table-row;
+}
+
+.column{
+	float: left;
+  	display: table-column;         
+  	width: 200px;         
+  	background-color: gainsboro;
+  	padding-right: 10px;
+}
+
+#assignment{
+	border-bottom: 1px solid black;
+	padding-bottom: 15px;
+}
+
+#labs{
+	padding-top: 30px;
+	border-bottom: 1px solid black;
+	padding-bottom: 15px;
+}
+
+/* Refers to all h2 texts */
+h2{
+	font-size: 25px;
+}
+
+/* Refers to all p texts */
+p{
+	font-size: 18px;
+}
+
+#tests{
+	padding-top: 30px;
+	border-bottom: 1px solid black;
+	padding-bottom: 15px;
+}
+
+.quizzes{
+	padding-top: 30px;
+	padding-bottom: 15px;
+}

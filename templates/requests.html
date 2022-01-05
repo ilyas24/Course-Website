@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSCB20: Introduction To Databases and Web Applications</title>
+	<!-- included favicon to display utsc logo on tab -->
+	<link rel ="shortcut icon" type = "_image_/ico" href="{{ url_for('static', filename='photos/favicon.ico') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='header_footer.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='requests.css') }}">
+
+</head>
+<body >
+	
+	<!-- header section -->
+
+	<div class = "header">
+		
+		<!-- These are the menus that will always appear at the top when scrolling -->
+
+		<ul align = "center">
+			<li><a href = "{{ url_for('index') }}"> <b>Home</b> </a></li>
+			<li><a href = "{{ url_for('lecture') }}"> <b>Lectures</b></a> </li>
+			<li><a href = "{{ url_for('coursework') }}"> <b>Course Work</b></a>
+			<ul>
+
+				<!-- created submenus under course work to make it more organized
+				-->
+				<li><a href = "{{ url_for('coursework', _anchor='assignment') }}">Assignments</a></li>
+				<li><a href ="{{ url_for('coursework', _anchor='labs') }}">Labs</a></li>
+				<li><a href ="{{ url_for('coursework', _anchor='tests') }}">Tests</a></li>
+				<li><a href ="{{ url_for('coursework', _anchor='quizzes') }}">Quizzes</a></li>
+			</ul>
+		</li>
+
+			<li><a href = 'https://piazza.com/' target="_blank"><b>Class Discussion</b> </a></li>
+			<li><a href = 'https://markus.utsc.utoronto.ca/cscb20w19/?locale=en' target="_blank"><b>Markus</b> </a></li>
+			<li><a href = "{{ url_for('courseteam') }}"> <b>Course Team </b></a></li>
+			<li><a href = "{{ url_for('calendar') }}"> <b> Calendar </b></a></li>
+			<li><a href = "{{ url_for('resources') }}"> <b> Resources </b></a></li>
+			<li><a href = "{{ url_for('news') }}"> <b> News </b></a></li>
+			<li><a href = "/logout"> <b> Logout </b></a></li>
+		</ul>
+	</div>
+
+
+
+	<!-- Main Section -->
+	<div class = "main">
+		<h2> Remark Requests </h2>
+		<br>
+		<!-- '&ensp' is used to creeate two spaces to start new sentences -->
+		<p> Here are remark requests from students&ensp; Their request shows what assessment they want a remark for, along with the students <br> explanation&ensp; Each student's request is separated by a line and their username is shown above.</p>
+		
+
+		<!-- to consider requests
+			from different students -->
+		{% for element in table %}
+		<div id = request>
+			<br><br>
+			<h4>Student Username:</h4> {{element.studentname}}
+			<br><br>
+			<h4>Assessment:</h4> {{element.assessment}}
+			<br><br>
+			<h4> Reason for Remark Request:</h4>
+			{{element.request}}
+			<br><br>
+		</div>
+		{% endfor %}
+
+
+
+
+	</div>
+
+	<!-- footer section -->
+
+	<footer>
+		<a href = 'http://web.cs.toronto.edu/people/faculty.htm' target = "_blank"> UofT Faculty of Computer Science</a>
+		<br>
+		Site Designed by Ilyas Duale & Shamsun Nila
+
+	</footer>
+
+	
+	<script type="text/javascript" src="{{ url_for('static', filename='inform.js') }}"></script>
+
+	
+</body>
+</html>

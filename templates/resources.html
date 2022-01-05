@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSCB20: Introduction To Databases and Web Applications</title>
+	<!-- included favicon to display utsc logo on tab -->
+	<link rel="shortcut icon" type = "_image_/ico" href="{{ url_for('static', filename='photos/favicon.ico') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='header_footer.css') }}">
+
+</head>
+
+<body>
+
+	<!-- header section -->
+
+	<div class = "header">
+		
+		<!-- These are the menus that will always appear at the top when scrolling -->
+
+		<ul align = "center">
+			<li><a href = "{{ url_for('index') }}"> <b>Home</b> </a></li>
+			<li><a href = "{{ url_for('lecture') }}"> <b>Lectures</b></a> </li>
+			<li><a href = "{{ url_for('coursework') }}"> <b>Course Work</b></a>
+			<ul>
+
+				<!-- created submenus under course work to make it more organized
+				-->
+				<li><a href = "{{ url_for('coursework', _anchor='assignment') }}">Assignments</a></li>
+				<li><a href ="{{ url_for('coursework', _anchor='labs') }}">Labs</a></li>
+				<li><a href ="{{ url_for('coursework', _anchor='tests') }}">Tests</a></li>
+				<li><a href ="{{ url_for('coursework', _anchor='quizzes') }}">Quizzes</a></li>
+			</ul>
+		</li>
+
+			<li><a href = 'https://piazza.com/' target="_blank"><b>Class Discussion</b> </a></li>
+			<li><a href = 'https://markus.utsc.utoronto.ca/cscb20w19/?locale=en' target="_blank"><b>Markus</b> </a></li>
+			<li><a href = "{{ url_for('courseteam') }}"> <b>Course Team </b></a></li>
+			<li><a href = "{{ url_for('calendar') }}"> <b> Calendar </b></a></li>
+			<li><a href = "{{ url_for('resources') }}"> <b> Resources </b></a></li>
+			<li><a href = "{{ url_for('news') }}"> <b> News </b></a></li>
+			<li><a href = "/logout"> <b> Logout </b></a></li>
+		</ul>
+	</div>
+
+
+
+	<!-- Main body -->
+	
+	<div class = "main"> 
+		<h2> Online Resources </h2>
+		<br>
+		<div class = "OnlineResources">
+			<ul>
+				<li> <a href = "{{ url_for('index') }}"> Course Website </a> <br> <br>
+				All course information, lecture notes, lab handous, special announcements, etc. will be posted on the course website. You should visit website to find all information.</li> 
+				<br> 
+				<li> Code academy Exercises for <a href = "https://code.tutsplus.com/articles/sql-for-beginners--net-8200" target="_blank"> SQL. </a> </li>
+				<br> 
+				<li> Email Communication <br> <br> Questions regarding the course material, assignments, midterm, etc. should be posed on the bulletin board. Questions about the assignment which you feel you cannot formulate without revealing your solution (should be very rare!), as well as questions and concerns regarding your personal matters should be directed to the instructor. </li>
+				<br> 
+				<li> <a href="https://piazza.com/class/jr7mjhytaij3jc" target="_blank"> Discussion Board</a> is where you will find class discussion<br> <br> <li>You are encouraged to use the bulletin board to discuss the course material, pose questions on the assignments, etc. The bulletin board will be monitored by the instructor and by your TAs. Please, be very careful not to reveal (parts of) your solution on the bulletin board.
+				</li>
+				<br>
+			</ul>
+		</div>
+		<h2> Software and Documentation </h2>
+		<br>
+		<div class = "SoftDoc"> 
+			<ul>
+				<li> Logging into Matlab.
+					<ol> 
+						<li> Mac OS comes with the application "terminal".  Simple click on it to run. Login to matlab by typing:
+						ssh utorid@mathlab.utsc.utoronto.ca. <br>Enter your password. </li>
+						<br> 
+
+						<li> Windows - you will need a SSH client. PuTTY is a good free one. You can download and install here: <a href = "http://www.putty.org/" target="_blank"> PuTTY </a> . Use the same command as above to login to matlab: <br> <br> ssh utorid@mathlab.utsc.utoronto.ca. </li>
+					</ol>
+				</li>
+			</ul>
+		</div>	
+	</div>
+
+
+	<!-- footer section -->
+
+	<footer>
+		<a href = 'http://web.cs.toronto.edu/people/faculty.htm' target = "_blank"> UofT Faculty of Computer Science</a>
+		<br>
+		Site Designed by Ilyas Duale & Shamsun Nila
+
+	</footer>
+</body>
+</html>

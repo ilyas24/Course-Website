@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login/Register</title>
+	<!-- included favicon to display utsc logo on tab -->
+	<link rel ="shortcut icon" type = "_image_/ico" href="{{ url_for('static', filename='photos/favicon.ico') }}">
+	<link rel="stylesheet", type = "text/css" href="{{ url_for('static', filename='login_register.css') }}">
+</head>
+<body>
+	<!--header section -->
+	<div class="header">
+		<h1 align=center> CSCB20: Introduction to Database & Web Application </h1>
+	</div>
+
+	<!-- only when flash is called, it should display message -->
+	<div class = "flashmessage" >
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					<h2>{{ message }}</h2>
+				{% endfor %}
+			{% endif %}
+			
+		{% endwith %}
+	</div>
+	
+
+	<!-- main section -->
+	<div class = "main">
+
+		<!-- login box -->
+		<div class="login">
+			<h3> Log In </h3>
+			<br>
+			<form method="post" action = "{{ url_for('loginAttempt') }}">
+				Login As:
+				<br><br>
+				<input type="radio" name="accounttype" value="student">Student</input>
+	 		    <input type="radio" name="accounttype" value="instructor"> Instructor</input>
+	 		    <br><br><br>
+				<INPUT id = "uname" TYPE="text" NAME="username" PLACEHOLDER = "Username">
+				<br> <br> 
+				<INPUT id = "pword" TYPE="password" NAME="password" PLACEHOLDER = "Password">
+				<br> <br>
+				<INPUT TYPE = "submit" VALUE = "Log In">
+			</form>
+		</div>
+
+
+		<!-- register box -->
+		<div class="register">
+			<h3> Register </h3>
+			<br>
+			<form method="post" action = "{{ url_for('registerAttempt') }}">
+				Register As:
+				<br><br>
+				<input type="radio" name="accounttype" value="student">Student
+	 		    <input type="radio" name="accounttype" value="instructor"> Instructor
+	 		    <br><br><br>
+				<INPUT id = "id" TYPE='text' NAME = "ID" PLACEHOLDER= "ID number">
+				<br> <br> 
+				<INPUT id = "uname" TYPE="text" NAME="username" PLACEHOLDER = "Username">
+				<br> <br> 
+				<INPUT id = "pword" TYPE="password" NAME="password" PLACEHOLDER = "Password">
+				<br> <br>
+				<INPUT  TYPE = "submit" VALUE = "Register">
+			</form>
+		</div>
+
+
+	</div>
+
+
+</body>
+</html>

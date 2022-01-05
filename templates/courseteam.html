@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSCB20: Introduction To Databases and Web Applications</title>
+	<!-- included favicon to display utsc logo on tab -->
+	<link rel="shortcut icon" type = "_image_/ico" href="{{ url_for('static', filename='photos/favicon.ico') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='header_footer.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='courseteam.css') }}">
+
+</head>
+
+<body>
+	
+	<!-- header section -->
+
+	<div class = "header">
+		
+		<!-- These are the menus that will always appear at the top when scrolling -->
+
+		<ul align = "center">
+			<li><a href = "{{ url_for('index') }}"> <b>Home</b> </a></li>
+			<li><a href = "{{ url_for('lecture') }}"> <b>Lectures</b></a> </li>
+			<li><a href = "{{ url_for('coursework') }}"> <b>Course Work</b></a>
+			<ul>
+
+				<!-- created submenus under course work to make it more organized
+				-->
+				<li><a href = "{{ url_for('coursework', _anchor='assignment') }}">Assignments</a></li>
+				<li><a href ="{{ url_for('coursework', _anchor='labs') }}">Labs</a></li>
+				<li><a href ="{{ url_for('coursework', _anchor='tests') }}">Tests</a></li>
+				<li><a href ="{{ url_for('coursework', _anchor='quizzes') }}">Quizzes</a></li>
+			</ul>
+		</li>
+
+			<li><a href = 'https://piazza.com/' target="_blank"><b>Class Discussion</b> </a></li>
+			<li><a href = 'https://markus.utsc.utoronto.ca/cscb20w19/?locale=en' target="_blank"><b>Markus</b> </a></li>
+			<li><a href = "{{ url_for('courseteam') }}"> <b>Course Team </b></a></li>
+			<li><a href = "{{ url_for('calendar') }}"> <b> Calendar </b></a></li>
+			<li><a href = "{{ url_for('resources') }}"> <b> Resources </b></a></li>
+			<li><a href = "{{ url_for('news') }}"> <b> News </b></a></li>
+			<li><a href = "/logout"> <b> Logout </b></a></li>
+		</ul>
+	</div>
+
+
+	<!-- Main body Section-->
+	
+	<div class = "main"> 
+		<h2> Course Team </h2>
+		<br>
+		<img src = "{{ url_for('static', filename='photos/teamwork.jpg') }}" alt = 'team work photo' width = 450px>
+		<div class = "CourseTeam">
+			<h3> Instructor </h3> 
+			<ul> 
+				<li> Abbas Attarwala <br> Email: <a href = 'mailto: abbas.attarwala@utsc.utoronto.ca'> abbas.attarwala@utsc.utoronto.ca </a> <br> Office: IC349 <br> Office Hours: Monday 11:30 - 2:30 </li>
+			</ul>
+			<br>
+			<h3> Teaching Assistants </h3>
+			<ul>
+				<li> Brian Lam <br> Office Hours: Friday 10AM-12 PM at IC400A </li> 
+				<br> 
+				<li> Dharmik Shah <br> Office Hours: Tuesday 9-11 AM at IC400A </li>
+				<br> 
+				<li> Kevin Zhang <br> Office Hours: Wednesday 1-3 PM at IC400A </li>
+				<br>
+				<li> Suhailah Rahman <br> Office Hours: Friday 1-3 PM at IC400A </li>
+			</ul>
+		</div>
+	</div>
+
+
+	<!-- footer section -->
+
+	<footer>
+		<a href = 'http://web.cs.toronto.edu/people/faculty.htm' target = "_blank"> UofT Faculty of Computer Science</a>
+		<br>
+		Site Designed by Ilyas Duale & Shamsun Nila
+
+	</footer>
+
+</body>
+</html>

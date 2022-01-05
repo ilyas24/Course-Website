@@ -1,0 +1,18 @@
+img{
+
+	padding-bottom: 40px;
+}
+
+.news{
+	border-bottom: 1px solid black;
+	padding-bottom: 30px;
+}
+
+.updates{
+	padding-top: 30px;
+}
+
+/* Applies to all h2 text */
+h2{
+	font-size: 30px;
+}
